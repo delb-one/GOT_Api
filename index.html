@@ -11,33 +11,17 @@
     <!-- Navbar -->
     <nav class="sticky top-0 z-10 bg-white shadow-sm">
       <div class="max-w-6xl mx-auto flex justify-center gap-4 px-4 py-4">
-        <button
-          id="getBooksBtn"
-          class="nav-btn"
-        >
-          📚 Books
-        </button>
-        <button
-          id="getCharactersBtn"
-          class="nav-btn"
-        >
+        <button id="getBooksBtn" class="nav-btn nav-tab">📚 Books</button>
+        <button id="getCharactersBtn" class="nav-btn nav-tab">
           🧍 Characters
         </button>
-        <button
-          id="getHousesBtn"
-          class="nav-btn"
-        >
-          🏰 Houses
-        </button>
+        <button id="getHousesBtn" class="nav-btn nav-tab">🏰 Houses</button>
       </div>
     </nav>
 
     <!-- Content -->
     <main class="max-w-6xl mx-auto p-6">
-      <div
-        id="output"
-        class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-      ></div>
+      <div id="output" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
     </main>
 
     <!-- Tailwind utilities -->
@@ -49,6 +33,9 @@
         transition-all duration-200
         active:scale-95
         cursor-pointer;
+      }
+      .nav-btn.active {
+        @apply bg-slate-900 text-white border-slate-900 shadow;
       }
     </style>
 

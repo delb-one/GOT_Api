@@ -1,5 +1,18 @@
 const BASE_URL = "https://anapioficeandfire.com/api/";
+
+/* ==========================
+   DOM REFERENCES
+========================== */
 const outputEl = document.getElementById("output");
+const tabs = document.querySelectorAll(".nav-tab");
+
+/* ==========================
+   UI HELPERS
+========================== */
+function setActiveTab(activeBtn) {
+  tabs.forEach((btn) => btn.classList.remove("active"));
+  activeBtn.classList.add("active");
+}
 
 /* ==========================
    Generic API fetch
@@ -88,11 +101,17 @@ async function renderHouses() {
 /* ==========================
    Events
 ========================== */
-document.getElementById("getBooksBtn")
-  .addEventListener("click", renderBooks);
+document.getElementById("getBooksBtn").addEventListener("click", (e) => {
+  setActiveTab(e.currentTarget);
+  renderBooks();
+});
 
-document.getElementById("getCharactersBtn")
-  .addEventListener("click", renderCharacters);
+document.getElementById("getCharactersBtn").addEventListener("click", (e) => {
+  setActiveTab(e.currentTarget);
+  renderCharacters();
+});
 
-document.getElementById("getHousesBtn")
-  .addEventListener("click", renderHouses);
+document.getElementById("getHousesBtn").addEventListener("click", (e) => {
+  setActiveTab(e.currentTarget);
+  renderHouses();
+});
