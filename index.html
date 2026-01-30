@@ -1,12 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Ice & Fire Explorer</title>
+  </head>
+
+  <body class="bg-slate-100 text-slate-800 min-h-screen">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-10 bg-white shadow-sm">
+      <div class="max-w-6xl mx-auto flex justify-center gap-4 px-4 py-4">
+        <button
+          id="getBooksBtn"
+          class="nav-btn"
+        >
+          📚 Books
+        </button>
+        <button
+          id="getCharactersBtn"
+          class="nav-btn"
+        >
+          🧍 Characters
+        </button>
+        <button
+          id="getHousesBtn"
+          class="nav-btn"
+        >
+          🏰 Houses
+        </button>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="max-w-6xl mx-auto p-6">
+      <div
+        id="output"
+        class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      ></div>
+    </main>
+
+    <!-- Tailwind utilities -->
+    <style type="text/tailwindcss">
+      .nav-btn {
+        @apply px-5 py-2 rounded-full border border-slate-300
+        bg-white text-slate-700 font-medium
+        hover:bg-slate-600 hover:text-white
+        transition-all duration-200
+        active:scale-95
+        cursor-pointer;
+      }
+    </style>
+
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
