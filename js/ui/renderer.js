@@ -1,4 +1,5 @@
-const outputEl = document.getElementById("output");
+import { getById } from "../utils/doms.js";
+const outputEl = getById("output");
 
 export function showLoading() {
   outputEl.innerHTML = `<p class="text-center">Loading...</p>`;
